@@ -6,43 +6,48 @@
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| Node.js | v22+ | Core runtime for build/dev environment |
-| Browser | Modern | Application runtime |
+| Node.js | v22+ (approx) | Core runtime environment |
+| Browser | Modern | Client runtime |
 
 ## Dependencies
 
 ### Production
 | Package | Version | Purpose |
 |---------|---------|---------|
-| react | ^19.2.5 | UI Library |
-| react-dom | ^19.2.5 | DOM Rendering |
-| framer-motion | ^12.38.0 | Animation Library |
+| react | ^19.2.5 | UI Framework |
+| react-dom | ^19.2.5 | DOM Renderer |
+| framer-motion | ^12.38.0 | Animations |
+| motion | ^12.38.0 | Animation utilities |
+| tailwind-merge | ^3.5.0 | CSS Utility merging |
+| clsx | ^2.1.1 | Classname utility |
 | lucide-react | ^1.14.0 | Icons |
+| @radix-ui/react-icons | ^1.3.2 | Icons |
+| next-themes | ^0.4.6 | Theme provider |
 
 ### Development
 | Package | Version | Purpose |
 |---------|---------|---------|
-| vite | ^8.0.10 | Build Tool & Dev Server |
-| typescript | ~6.0.2 | Type Checking |
-| tailwindcss | ^4.2.4 | Utility-first CSS framework |
+| vite | ^8.0.10 | Build tool / Dev Server |
+| typescript | ~6.0.2 | Static typing |
+| tailwindcss | ^4.2.4 | CSS Framework |
+| @tailwindcss/postcss | ^4.2.4 | Tailwind compiler |
 | eslint | ^10.2.1 | Linter |
 
 ## Infrastructure
 
 | Service | Provider | Purpose |
 |---------|----------|---------|
-| N/A | Local | Currently local development only |
+| Local Dev | Vite | Development Server |
 
 ## Configuration
 
 | Variable | Purpose | Location |
 |----------|---------|----------|
-| tailwind | Styling Config | `tailwind.config.js` |
-| vite | Build Config | `vite.config.ts` |
-| tsconfig | TS Config | `tsconfig.json` / `tsconfig.app.json` |
+| N/A | N/A | N/A |
 
 ## Outdated Packages
 
 | Package | Current | Latest | Risk |
 |---------|---------|--------|------|
-| None checked | - | - | - |
+| @types/node | 24.12.3 | 25.6.2 | Low |
+| vite | 8.0.10 | 8.0.11 | Low |

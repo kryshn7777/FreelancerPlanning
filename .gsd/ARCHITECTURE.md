@@ -4,72 +4,63 @@
 
 ## Overview
 
-A React-based single-page application focused on high-quality, animated frontend UI, acting as a landing page or frontend prototype for a SaaS application (Freelancer Planning).
+A modern, high-performance landing page and interactive mock dashboard for the Freelancer Planning SaaS platform.
 
-```
+```text
 ┌─────────────────────────────────────────┐
-│              [main.tsx / App.tsx]       │
+│              [App.tsx (Main)]           │
 ├─────────────────────────────────────────┤
-│         [React Components Layer]        │
-│    (Layout, Sections, UI Elements)      │
+│         [UI / Sections / Layout]        │
 ├─────────────────────────────────────────┤
-│            [Framer Motion]              │
-│        (Animation & Interaction)        │
+│            [Mock Data Layer]            │
 └─────────────────────────────────────────┘
 ```
 
 ## Components
 
-### Layout Components
-- **Navbar**
-  - **Purpose:** Navigation bar.
-  - **Location:** `src/components/layout/Navbar.tsx`
+### Hero
+- **Purpose:** Primary landing area with call-to-action buttons.
+- **Location:** `src/components/sections/Hero.tsx`
+- **Dependencies:** Framer Motion, local UI components.
 
-### Section Components
-- **Hero**
-  - **Purpose:** Main hero section of the landing page.
-  - **Location:** `src/components/sections/Hero.tsx`
-- **SocialProof**
-  - **Purpose:** Displays social proof or testimonials.
-  - **Location:** `src/components/sections/SocialProof.tsx`
-- **AppMockup**
-  - **Purpose:** Displays a visual mockup of the product.
-  - **Location:** `src/components/sections/AppMockup.tsx`
-- **BentoGrid**
-  - **Purpose:** Feature grid in a bento-box layout.
-  - **Location:** `src/components/sections/BentoGrid.tsx`
+### Feature Showcase
+- **Purpose:** Highlights product capabilities using animated UI cards.
+- **Location:** `src/components/sections/FeatureShowcase.tsx`
+- **Dependencies:** local UI components, Radix UI icons.
 
-### UI Components
-- **CustomCursor**
-  - **Purpose:** Replaces the default cursor with a custom animated one.
-  - **Location:** `src/components/ui/CustomCursor.tsx`
-- **RevealText**
-  - **Purpose:** Text animation component.
-  - **Location:** `src/components/ui/RevealText.tsx`
-- **StaggerGroup / StaggerItem**
-  - **Purpose:** Wrapper components for staggered animations.
-  - **Location:** `src/components/ui/StaggerGroup.tsx`, `src/components/ui/StaggerItem.tsx`
+### App Mockup / Bento Grid
+- **Purpose:** Interactive dashboard simulation using a Bento-box layout.
+- **Location:** `src/components/sections/AppMockup.tsx`
+- **Dependencies:** `src/components/mockup-views/`
+
+### Mockup Views
+- **Purpose:** Specific functional views for the dashboard simulation (Overview, Finance, Pipeline, etc.).
+- **Location:** `src/components/mockup-views/`
+- **Dependencies:** `src/data/mockApp.ts`
+
+### UI primitives
+- **Purpose:** Reusable, animated UI components like BorderBeam, MagicCard, ScrambleText.
+- **Location:** `src/components/ui/`
+- **Dependencies:** Framer Motion, Tailwind CSS, clsx, tailwind-merge.
 
 ## Data Flow
 
-1. User visits application, `main.tsx` mounts `App.tsx`.
-2. `App.tsx` renders `Navbar`, `Hero`, `SocialProof`, `AppMockup`, and `BentoGrid` sequentially.
-3. Interactive elements (cursor, scroll animations) are handled via `framer-motion` integrated at the component level.
+1. User navigates the landing page.
+2. User interacts with the AppMockup dashboard simulation.
+3. Dashboard views read static data from `src/data/mockApp.ts`.
 
 ## Integration Points
 
 | Service | Type | Purpose |
 |---------|------|---------|
-| None currently | N/A | Fully client-side application |
+| None currently | N/A | Fully static mock application |
 
 ## Technical Debt
 
-- [ ] Static content in components could be abstracted to a content/data layer.
-- [ ] Lacking unit tests and end-to-end testing frameworks.
-- [ ] No dedicated state management (using local component state so far).
+No explicit technical debt markers (TODO/FIXME) identified in the codebase.
 
 ## Conventions
 
-**Naming:** PascalCase for React components, camelCase for variables/functions.
-**Structure:** Feature-based directory grouping (`layout`, `sections`, `ui`).
-**Testing:** No test patterns observed yet.
+**Naming:** PascalCase for React components.
+**Structure:** Feature-based directories (`sections`, `mockup-views`, `ui`, `layout`).
+**Styling:** Tailwind CSS with utility class merging (`clsx`, `twMerge`).

@@ -1,0 +1,11 @@
+{
+  "name": "freelancer-planning-root",
+  "private": true,
+  "scripts": {
+    "build": "npm run build --prefix freelancer-app && npm run assemble",
+    "assemble": "node ./scripts/assemble.js"
+  },
+  "dependencies": {
+    "framer-motion": "^12.38.0"
+  }
+}
